@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculator</title>
+<style>
+body {
+margin:0;
+display:flex;
+justify-content:center;
+height:100vh;
+align-items:center;
+text-align:center;
+background-color:yellow;
+font-family:cursive;
+}
+form {
+background-color;white;
+padding:20px;
+box-shadow: 0 4px 8px rgba(0,0,0,.3);
+border-radius:10px;
+margin:10px;
+}
+
+.input {
+display:block;
+width:100%;
+box-sizing:border-box;
+font-size:25px;
+text-align:center;
+padding:10px;
+border:solid 4px green;
+color:green;
+}
+
+.input::placeholder {
+color:lightgrey;
+font-family:cursive;
+}
+.btn {
+background-color:green;
+color:white;
+border:none;
+display:block;
+width:100%;
+padding:10px;
+font-size:20px;
+font-family:cursive;
+margin:20px 0;
+border-radius:5px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+cursor:pointer;
+}
+.btn:hover {
+filter:brightness(0.9)
+}
+.score {
+color:green;
+text-align:right;
+}
+p {
+align-items:center;
+}
+
+
+
+</style>
+</head>
+<body>
+	<!--<form class="form" id"form">
+		<h4 class="score"
+		id="score">Score: 0</h4>
+		<h1 id="question">What is 1 
+		multiplied by 1?</h1>
+		<input type="text" class="input" id="input" placeholde=
+		"Enter answer" autofocus autocomplete="off">
+		<button type="submit" class="btn">Submit</button>
+
+	</form>-->
+	<form>
+1st Number : <input class="input" type="text" id="firstNumber" placeholder="Enter 1st number"/><br>
+2nd Number: <input class="input" type="text" id="secondNumber" placeholder="Enter 2nd number" /><br>
+<input class="btn" type="button" onClick="multiplyBy()" Value="Multiply" />
+<input class="btn" type="button" onClick="divideBy()" Value="Divide" />
+<input class="btn" type="button" onClick="addBy()" Value="Add" />
+<input class="btn" type="button" onClick="subtractBy()" Value="Subtract" />
+</form>
+<hr />
+<h4>The Result is : <br>
+<span class"score" id = "result"></span>
+</h4>
+
+
+<!--script src="multiply-copy.js"></script-->
+<script>
+function multiplyBy() {
+        num1 = document.getElementById("firstNumber").value;
+        num2 = document.getElementById("secondNumber").value;
+        document.getElementById("result").innerHTML = num1 * num2;        }
+function divideBy() {
+        num1 = document.getElementById("firstNumber").value;                      num2 = document.getElementById("secondNumber").value;
+        document.getElementById("result").innerHTML = num1 / num2;
+}
+function addBy() {
+	num1 = document.getElementById("firstNumber").value;
+	num2 = document.getElementById("secondNumber").value;
+	numAdded = parseInt (num1) + parseInt (num2);
+	document.getElementById("result").innerHTML = numAdded;
+}
+function subtractBy() {
+	num1 = document.getElementById("firstNumber").value;
+	num2 = document.getElementById("secondNumber").value;
+	document.getElementById("result").innerHTML = num1 - num2;
+}
+</script>
+</body>
+</html>

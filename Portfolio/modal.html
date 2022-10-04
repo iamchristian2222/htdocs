@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+<style>
+.button {
+text-align:center;
+background-color:black;                            
+border-radius: 10px;                                                     
+box-shadow: 0 4px 15px rgba(200,200,200,20), 20px 5px 15px rgba(0,0,0,50);
+color:white;
+}
+.modal-body {
+padding:20px;
+box-shadow: 0 4px 8px rgba(255,255,255,50),0 4px 25px rgba(255,255,255,50);  
+border-radius:10px;
+margin:10px;                                                              
+background-image:linear-gradient(45deg,black,white);
+align-items:center;
+}
+body {
+margin:0;                                                                 
+display:flex;
+justify-content:center;                                                   
+height:100vh;
+align-items:center;
+text-align:center;                                                        
+background-image:linear-gradient(45deg, black, black);                    
+font-family:cursive;
+}
+.buttonone {
+background-image:linear-gradient(45deg,black,grey);                       
+border-radius:10px;
+width:200px;                                                              
+height:50px;
+margin:auto;
+font-size:18px;
+box-shadow: 5px 4px 8px rgba(0,0,0,.3),0 5px 12px rgba(0,0,0,5);
+}
+.buttontwo {
+background-image:linear-gradient(45deg,grey,black);
+border-radius:10px;                                                       
+width:200px;                                                              
+height:50px;                                                              
+margin:auto;                                                              
+font-size:18px;                                                           
+box-shadow: 5px 4px 8px rgba(0,0,0,.3), 0 5px 12px rgba(0,0,0,5);
+}
+</style>
+</head>
+<body>
+	<!--Modal Button-->
+	<button class="button" id="modalBtn">WHOAMI</button>
+	<!--Nodal-->
+	<div id="simpleModal" class="modal">
+		<div class="modal-content">
+			<div class="modal-body">
+			<p>DEVIN CHRISTIAN ALEXIS BLACK</p>
+			<p><a href="portfolio.html">PORTFOLIO</a></p>
+				<figure>
+				<img src="prophoto.jpg">
+				</figure>
+                  	<span class="closeBtn">&times;</span>
+			</div>
+		</div>
+	</div>
+	<script>
+	//get modal element
+var modal = document.getElementById("simpleModal");
+	//get open modal button
+var modalBtn = document.getElementById("modalBtn");
+	//get close button
+	var closeBtn = document.getElementsByClassName("closeBtn")[0];
+	//listen for open click
+modalBtn.addEventListener("click",openModal);
+	//listen for close click
+closeBtn.addEventListener("click",closeModal);
+	//listen for outside click
+window.addEventListenet("click",clickOutside);
+	//function to open modal
+function openModal(){
+	modal.style.display = "block";
+}
+	//function to close modal
+function closeModal(){
+	modal.style.display = "none";
+}
+	//function to close modal if outside click
+function outsideClick(e){
+	if(e.target == modal){
+	modal.style.display = "none";
+	}
+}
+	</script>
+</body>
+</html>
